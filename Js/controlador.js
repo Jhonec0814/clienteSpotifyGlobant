@@ -1,18 +1,36 @@
 import {pintarCanciones} from "./pintarCanciones.js"
-import {identificarArtistas} from "./Artitas.js"
+import { generarURI } from "./generarArtistas.js"
 import {TOKEN} from "./generarToken.js"
 import {consumirAPI} from "./servicios.js"
 
-// Obtengo del DOM (HTML) el valor de opcion
 
-// Recibir la opción deseada
-let opcion=5
-// Obtengo las constantes
-let URI = identificarArtistas(opcion)
+let cards = document.getElementById("contenedorCanciones")
 
-// Llamo al servicio
-let resultado=await consumirAPI(URI,TOKEN)
+let boton = document.getElementById("boton")
+boton.addEventListener("click",function(evento){
 
-pintarCanciones(resultado)
+    evento.preventDefault()
+
+    let artistaSeleccionada = document.getElementById("artista").value
+    
+
+    let URI = generarURI(artistaSeleccionada)
+    
+    
+
+    async function activarAPI(){
+    let resultado= await consumirAPI(URI,TOKEN)
+
+    console.log(resultado)
+    pintarCanciones(resultado)
+    }
+    
+    activarAPI()
+    cards.innerHTML=""
+})
+
+
+
+
 
 

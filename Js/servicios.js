@@ -1,3 +1,4 @@
+// Consumir los recursos del API
 export async function consumirAPI(URI, TOKEN){
 
     const PARAMETROS_PETICION = {

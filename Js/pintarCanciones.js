@@ -1,5 +1,3 @@
-
-
 export function pintarCanciones(resultado){
 
 let contenedorCanciones = document.getElementById("contenedorCanciones")
