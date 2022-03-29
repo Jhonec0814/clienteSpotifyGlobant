@@ -5,7 +5,7 @@ import {consumirAPI} from "./servicios.js"
 
 
 
-let card = document.getElementById("cardDuaLipa")
+let card = document.getElementById("6M2wZ9GZgrQXHCFfjv46we")
 card.addEventListener("click",function(evento){
 evento.preventDefault()
 
