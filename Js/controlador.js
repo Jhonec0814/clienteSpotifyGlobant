@@ -1,12 +1,38 @@
 import {pintarCanciones} from "./pintarCanciones.js"
 import { generarURI } from "./generarArtistas.js"
-import {TOKEN} from "./generarToken.js"
+import {generarToken} from "./generarToken.js"
 import {consumirAPI} from "./servicios.js"
 
 
+
+let card = document.getElementById("cardDuaLipa")
+card.addEventListener("click",function(evento){
+evento.preventDefault()
+
+    let artistaChoose = document.getElementById("cardDuaLipa").value
+
+    let URI = generarURI(artistaChoose)
+
+    async function activarAPI(){
+
+        let token=await generarToken()
+        console.log(token)
+
+        let resultado= await consumirAPI(URI,token)
+    
+        console.log(resultado)
+        pintarCanciones(resultado)
+        }
+        
+        activarAPI()
+        cards.innerHTML=""
+
+
+})
+
 let cards = document.getElementById("contenedorCanciones")
 
-let boton = document.getElementById("boton")
+/*let boton = document.getElementById("boton")
 boton.addEventListener("click",function(evento){
 
     evento.preventDefault()
@@ -19,7 +45,11 @@ boton.addEventListener("click",function(evento){
     
 
     async function activarAPI(){
-    let resultado= await consumirAPI(URI,TOKEN)
+
+    let token=await generarToken()
+        console.log(token)
+
+    let resultado= await consumirAPI(URI,token)
 
     console.log(resultado)
     pintarCanciones(resultado)
@@ -27,7 +57,7 @@ boton.addEventListener("click",function(evento){
     
     activarAPI()
     cards.innerHTML=""
-})
+})*/
 
 
 
