@@ -2,6 +2,8 @@ export function pintarCanciones(resultado){
 
 let contenedorCanciones = document.getElementById("contenedorCanciones")
 
+    contenedorCanciones.innerHTML=""
+
     resultado.tracks.forEach(function(cancion){
 
     let columna = document.createElement("div")
