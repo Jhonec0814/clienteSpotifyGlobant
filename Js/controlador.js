@@ -5,11 +5,11 @@ import {consumirAPI} from "./servicios.js"
 
 
 
-let card = document.getElementById("6M2wZ9GZgrQXHCFfjv46we")
+let card = document.getElementById("artista")
 card.addEventListener("click",function(evento){
 evento.preventDefault()
 
-    let artistaChoose = document.getElementById("cardDuaLipa").value
+    let artistaChoose = document.getElementById("artista").value
 
     let URI = generarURI(artistaChoose)
 
