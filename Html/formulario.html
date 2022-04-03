@@ -21,10 +21,9 @@
         <a href="index.html" class="list-group-item list-group-item-action py-2 ripple bg-dark text-light screen-reader-text screen-reader-text">
           <i class="fas fa-chart-area fa-fw me-3 screen-reader-text screen-reader-text" ></i><span>Artists</span>
         </a>
-        <a href="formulario.html" class="list-group-item list-group-item-action py-2 ripple bg-dark text-light screen-reader-text"
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-dark text-light screen-reader-text"
           ><i class="fas fa-lock fa-fw me-3 screen-reader-text"></i><span>Sign in / Sign Up</span></a
-        > 
-        
+        >   
       </div>
     </div>
   </nav>
@@ -45,8 +44,10 @@
           alt="Spotify Logo"
           loading="lazy"
         />
-
+        <!-- <img src="/img/spotifyLogo.png" alt="" width="240" height="40"> -->
       </a>
+    
+        
       </ul>
     </div>
     <!-- Container wrapper -->
@@ -57,12 +58,62 @@
 
 <!--Main layout-->
 <main style="margin-top: 58px;">
-  <div class="container pt-4"></div>
+  <div class="container pt-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
-      <div class="container d-flex me-3">
-        <div class="row row-cols row-cols-md-2 g-4" id="contenedorCanciones">
+      <form class="bg-dark ">
+        <div class="mb-4 p-2 mt-3">
+          <h3 class="text-light mb-5">Welcome!</h3>
+      
+          <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
+          <input type="email" class="form-control" id="emailbox" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</div>
+          </div>
+        <div class="mb-3 p-2">
+         <label for="exampleInputPassword1" class="form-label text-center text-light">Password</label>
+         <input type="password" class="form-control" id="passwordbox">
         </div>
+          <button type="submit" class="btn btn-outline-success  Registrarse ms-2 mb-4 mt-3 screen-reader-text" id="botonregistro">Sign Up</button>
+          <button type="submit" class="btn btn-outline-success  Registrarse ms-4 mb-4 mt-3 screen-reader-text" id="botonlogin">Sign In</button>
+      </form>
+      <img src="/img/spotify-music.gif">
       </div>
+    </div>
+  </div>
+
+
+  <section> 
+    <!-- Modal -->
+        <div class="modal fade" id="modallogin">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12 col-md-4">
+                          <h4 id="mensajeRegistro"></h4>
+                          <h4 id="mensajelogin"></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+  </section>
+
+      
+
+      
 
 
 </body>
@@ -86,4 +137,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
+  <script src="/Js/firebase.js" type="module">  </script>
+  <script src="/Js/formulario.js" type="module"></script>
 </html>
